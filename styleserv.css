@@ -1,0 +1,82 @@
+/* Mejora el Contenido de los Servicios */
+
+.contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.column-left {
+    width: 70%; /* Ajusta el ancho de la columna izquierda según tus necesidades */
+    padding-right: 20px; /* Espacio entre las columnas */
+}
+
+.column-right {
+    width: 30%; /* Ajusta el ancho de la columna derecha según tus necesidades */
+}
+
+/* Estilos para la información de contacto y botones */
+.contact-info {
+    background-color: #fff; /* Fondo de la columna derecha */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 10px;
+}
+
+/* Boton de llamada */
+
+.boton {
+    display: flex; /* Utiliza un contenedor flex para alinear elementos verticalmente */
+    align-items: center; /* Alinea elementos verticalmente al centro */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    padding: 0.9rem 1.8rem;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    border: 3px solid rgb(252, 70, 100);
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    font-family: inherit;
+}
+
+/* Estilos para el ícono */
+.boton i {
+    font-size: 20px; /* Tamaño del ícono */
+    margin-right: 10px; /* Espacio entre el ícono y el mensaje */
+}
+
+/* Estilos para el mensaje */
+.boton span {
+    font-size: 16px; /* Tamaño del mensaje */
+}
+
+/* Estilos para el efecto hover */
+.boton::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(252, 70, 100);
+    transform: translateX(-100%);
+    transition: all .3s;
+    z-index: -1;
+}
+
+.boton:hover::before {
+    transform: translateX(0);
+}
+@media screen and (max-width: 720px) {
+    .titulo {
+        font-size: 20px; /* Reduce el tamaño del título */
+    }
+
+    p {
+        font-size: 14px; /* Reduce el tamaño del texto */
+    }
+}

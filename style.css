@@ -1,0 +1,577 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    position: relative;
+}
+
+/* Header Superior */
+
+.header__superior {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+/* Barra Menu */
+
+.container__menu {
+    width: 100%;
+    height: 70px;
+    background: #808080;
+    padding: 0px 20px;
+}
+
+.menu {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+}
+
+nav {
+    height: 100%;
+}
+
+nav > ul {
+    height: 100%;
+    display: flex;
+}
+
+nav ul li {
+    height: 100%;
+    list-style: none;
+    position: relative;
+}
+
+nav > ul > li > a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 300ms ease;
+}
+
+nav > ul > li > a:hover {
+    transform: scale(1.1);
+    background: #808080;
+    color: #000;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0.5);
+}
+
+/* Sub Menu */
+nav ul li ul {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 90px;
+    left: -5px;
+    padding: 14px 0px;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: all 300ms ease;
+}
+
+nav ul li:hover ul {
+    visibility: visible;
+    opacity: 1;
+    top: 70px;
+}
+
+nav ul li ul::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid white;
+    position: absolute;
+    top: -12px;
+    left: 20px;
+}
+
+nav ul li ul li a {
+    display: block;
+    color: #000;
+    padding: 6px;
+    padding-left: 14px;
+    margin-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 300ms ease;
+}
+
+nav ul li ul li a:hover {
+    background: #808080;
+    color: #000;
+    transform: scale(1.1);
+    padding-left: 30px;
+    font-size: 14px;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0.5);
+}
+
+/* Elementos Responsivos */
+
+.icon__menu {
+    font-size: 26px;
+    color:#fff;
+    cursor: pointer;
+    width: 26px;
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+
+#label__check {
+    width: 26px;
+    height: 100%;
+    display: none;
+}
+
+#check__menu {
+    display: none;
+}
+
+/* Slider de Imagenes */
+
+.container-slider {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+    box-shadow: 0 0 0 10px #fff, 0 15px 50px;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    width: 400%;
+    height: 400px;
+    margin-left: -100%;
+}
+
+.slider__section {
+    width: 100%;
+}   
+
+.slider__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.slider__btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgb(255, 255, 255, 0.7);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: monospace;
+}
+
+.slider__btn:hover {
+    background: #fff;
+}
+
+.slider__btn--left {
+    left: 10px;
+}
+
+.slider__btn--right {
+    right: 10px;
+}
+
+/* Tarjeta de Nuestras Caracteristicas */
+
+.card-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye las tarjetas uniformemente en el espacio horizontal */
+    margin: -10px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    margin: 70px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    color: #e8e8e8;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.content .heading {
+    font-weight: 700;
+    font-size: 28px;
+    color: #000;
+}
+
+.content .para {
+    line-height: 1.5;
+    color: #000;
+}
+
+.content .btn {
+    color: #e8e8e8;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover::before {
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: none;
+}
+
+.card:hover .btn {
+    color: #212121;
+    background: #e8e8e8;
+}
+
+.content .btn:hover {
+    outline: 2px solid #e8e8e8;
+    background: transparent;
+    color: #e8e8e8;
+}
+
+.content .btn:active {
+    box-shadow: none;
+}
+
+/* Titulos de cada pagina */
+
+/* Titulo de Nuestros Servicios*/
+.hero {
+    position: relative;
+    width: 100%; /* Ancho al 100% del contenedor padre */
+    height: 400px; /* Altura ajustable según tus necesidades */
+    background: url('image/reparacion-trabajador-mantenimiento-servicio.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+/* Titulo de Servicio Tecnico de lavadoras*/ 
+
+.hero1 {
+    position: relative;
+    width: 100%; /* Ancho al 100% del contenedor padre */
+    height: 400px; /* Altura ajustable según tus necesidades */
+    background: url('image/tec_lavadora.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    text-shadow: 2px 2px 5px #000;
+}
+
+/* Por que Elegirnos */
+
+/* Estilos para la lista de bloques con imagen */
+.lista-bloques-con-imagen {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    padding: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en una nueva línea cuando no haya suficiente espacio */
+}
+
+/* Estilos para la imagen lateral */
+.imagen img {
+    max-width: 100%; /* Asegura que la imagen se ajuste al ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 20px; /* Espacio entre la imagen y los bloques */
+}
+
+/* Estilos para el contenedor de bloques */
+.bloques {
+    display: flex;
+    flex-direction: column; /* Organiza los bloques en una columna vertical */
+    flex-grow: 1; /* Permite que los bloques ocupen todo el espacio restante */
+}
+
+/* Estilos para cada fila */
+.fila {
+    display: flex;
+    justify-content: center; /* Centra los bloques horizontalmente en la fila */
+    margin-bottom: 20px; /* Espacio entre filas */
+}
+
+/* Estilos para cada bloque */
+.bloque {
+    background-color: #f5f5f5; /* Color de fondo del bloque */
+    border: 1px solid #ddd; /* Borde del bloque */
+    padding: 20px;
+    margin-right: 20px; /* Espacio entre bloques */
+    width: 300px; /* Ancho del bloque */
+    border-radius: 15px;
+}
+
+/* Estilos para el título del bloque */
+.bloque h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Estilos para el contenido del bloque */
+.bloque p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Estilos para el título */
+.contenido h2 {
+    font-size: 34px;
+    color: #333;
+    margin-bottom: 20px; /* Espacio entre el título y los bloques */
+}
+
+/* Proceso */
+/* Estilo para el contenedor principal */
+.proceso-flecha {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna vertical */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto horizontalmente */
+    border-radius: 20px; /* Bordes redondeados */
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0); /* Fondo degradado */
+    padding: 20px; /* Espacio alrededor del contenido */
+}
+
+/* Estilo para el título */
+.titulo {
+    background-color: #f0f0f0; /* Color de fondo del título */
+    padding: 10px 20px; /* Espacio alrededor del título */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Estilo para los pasos */
+.pasos {
+    display: flex;
+    justify-content: space-between; /* Espacio uniforme entre los pasos */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilo para cada paso */
+.paso {
+    text-align: center;
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0; /* Color de fondo del paso */
+    clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%); /* Forma de flecha */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 0 10px; /* Espacio entre los pasos */
+}
+
+.paso1 {
+    background-color: #007acc; /* Azul */
+    color: #ffffff; /* Texto blanco */
+}
+
+.paso2 {
+    background-color: #00cc66; /* Verde */
+    color: #ffffff; /* Texto blanco */
+}
+
+.paso3 {
+    background-color: #ff6666; /* Rojo */
+    color: #ffffff; /* Texto blanco */
+}
+
+.paso img {
+    max-width: 60px;
+    margin-bottom: 10px;
+}
+
+/* Estilo de la flecha */
+.proceso-flecha::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #f0f0f0;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+
+@media screen and (max-width: 720px){
+
+    .header__superior {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    nav > ul {
+        flex-direction: column;
+        background-color: #023877;
+        position: fixed;
+        left: 0;
+        top: 155px;
+        width: 100%;
+        height: 0px;
+        transition: all 300ms ease;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav > ul > li > a:hover {
+        transform: scale(1);
+    }
+
+    nav ul li ul {
+        left: 170px;
+    }
+
+    nav > ul > li:hover ul {
+        top: 50px;
+    }
+
+    #label__check {
+        display: block;
+    }
+
+    .icon__menu {
+        display: flex;
+    }
+
+    #check__menu:checked ~ nav > ul {
+        height: 300px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .llamanos {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar horizontalmente */
+    }
+
+    table {
+        display: none;
+    }
+
+    .container-slider {
+        max-width: 80%; 
+    }
+
+    .slider__section {
+        width: 90%; 
+    }
+
+    .card-container {
+        flex-direction: column; /* Cambia a una disposición vertical */
+        align-items: center; /* Centra las tarjetas en el eje horizontal */
+    }
+    
+    .card {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        margin: 10px 0; /* Espacio entre las tarjetas */
+    }
+
+    .imagen img {
+        max-width: 50%; /* Reduce el ancho de la imagen al 50% del contenedor */
+    }
+
+}
+
+.whatsapp {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    z-index: 1;
+    width: 80px;
+}
